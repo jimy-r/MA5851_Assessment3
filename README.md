@@ -7,4 +7,5 @@ Description: Building a prototype NLP solution using webscraping and machine lea
 The analysis includes:
 
 data_collection.py: Python script with webcrawler, RSS requests and API calls
+
 crypto_news.JSON: Subsequent raw data output from data_collection. 1108 news articles.  
