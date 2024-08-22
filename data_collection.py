@@ -1,6 +1,7 @@
 # Assessment 3 - Webcrawler and NLP System
 # James Ross (14472266)
 # PART 1 - Data Collection Pipeline 
+# For project on GitHub: https://github.com/jimy-r/MA5851_Assessment3
 
 import requests
 from bs4 import BeautifulSoup
@@ -239,7 +240,7 @@ def fetch_news_api(api_key, base_url, query='Crypto', days=14, page_size=100, ma
     return all_articles
 
 # Function to fetch recent news articles from CryptoPanic API
-# Note: Originally set 10 1000 max_articles but hit API limit at 800.  
+# Note: Originally set 1000 max_articles but hit API limit at 800.  
 def fetch_cryptopanic_news(auth_token, days=14, max_articles=600, requests_per_second=5):
     end_date = datetime.now(timezone.utc)
     start_date = end_date - timedelta(days=days)
@@ -276,7 +277,7 @@ def fetch_cryptopanic_news(auth_token, days=14, max_articles=600, requests_per_s
 
                     all_articles.append(news_data)
 
-                    # Stop if we've reached the maximum number of articles
+                    # Stop if the max number of articles reached
                     if len(all_articles) >= max_articles:
                         print(f"Reached the maximum of {max_articles} articles.")
                         break
